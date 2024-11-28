@@ -6,8 +6,11 @@
   "author": "Restu Pambudi <34370106+sknightz@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.48.2",
+    "@playwright/test": "^1.49.0",
     "@types/node": "^22.9.0"
   },
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "@faker-js/faker": "^9.2.0"
+  }
 }
