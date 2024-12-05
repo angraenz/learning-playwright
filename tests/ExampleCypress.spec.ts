@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { faker } from '@faker-js/faker';
+// import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker/locale/id_ID';
 
 function generateCouponCode() {
     const prefix = "COUPON"; // Optional prefix
@@ -12,9 +13,10 @@ test('test', async ({ page }) => {
     const fakeEmail = faker.internet.email(); 
     const fakePassword = faker.internet.password();
     const fakeName = faker.internet.displayName();   
-    const fakeDescription = faker.lorem.paragraph();
+    // const fakeDescription = faker.lorem.paragraph();
+    const fakeDescription = faker.location.streetAddress();
     const couponCode = generateCouponCode();
-    
+
     await page.goto('https://example.cypress.io/commands/actions');
     await page.getByPlaceholder('Email').click();
     await page.getByPlaceholder('Email').fill(fakeEmail);
