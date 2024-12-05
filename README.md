@@ -29,3 +29,6 @@ npm install -g yarn
 ```
 yarn create playwright
 ```
+yarn playwright codegen (url)
+
+yarn playwright test --ui
