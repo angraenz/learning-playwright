@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { faker } from '@faker-js/faker';
+//import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker/locale/id_ID';
+//import { fakerID_ID } from '@faker-js/faker';
 
 test('test', async ({ page }) => {
     const fakeEmail = faker.internet.email();
@@ -7,6 +9,7 @@ test('test', async ({ page }) => {
     const fakeName = faker.person.fullName();
     const fakeDesc = faker.word.words();
     const fakeCoupon = faker.word.words();
+    //const FakerID = fakerID_ID;
 
   await page.goto('https://example.cypress.io/commands/actions');
   await page.getByPlaceholder('Email').click();
