@@ -46,51 +46,69 @@ Scripts for automation testing using Playwright with TypeScript.
 ## Creating a Pull Request (PR) in GitHub
 
 ### [First]
-a. to check the current status on branch main
+a. to check the current status on branch main.
   ```
   git status
   ```
-b. to donwload the latest status of remote repos to the local repos, always do this before merge
+b. to download the latest status of remote repos to the local repos, always do this before merge.
   ```
   git fetch origin
   ```
-c. to combine the changes between branch
+c. to combine the changes between branch.
   ```
   git merge origin/main 
   ```
 
 ### [Second]
-a. Go to Github
+a. Go to [Github](https://github.com/).
 
-b. Create an issue using 'Issue' menu, then assign yourself on right panel
+b. Create an issue using 'Issue' menu, then assign yourself on right panel.
 
-c. Create branch on right panel
+c. Create branch on right panel.
 
 ### [Third]
-a. git fetch origin
+a. Retrieves the latest changes from a remote repository without merging them into your local branch.
+  ```
+  git fetch origin 
+  ```
 
-b. git checkout (the new branch's name) --> for moving/switching to the new branch
+b. For moving/switching to the new branch.
+  ```
+  git checkout (the new branch's name)
+  ```
 
 ### [Fourth]
-a. git add . --> for adding all the new file from local repos
+a. For adding all the new file from local repos.
+  ```
+  git add .
+  ```
 
-b. git add nama file --> for adding specific new file from local repos, choose between a. & b.
+b. For adding specific new file from local repos, choose between a or b.
+  ```
+  git add file_name
+  ```
 
-c. git commit -m (message: 'Nomor Tiket  nama branch', ex: '#3 Changed faker script') --> to save the changes in local repos
+c. To save the changes in local repos.
+  ```
+  git commit -m (message: 'Nomor Tiket  nama branch', ex: '#3 Changed faker script')
+  ```
 
-d. git push origin nama branch --> to upload the local repos to remote repos
+d. To upload the local repos to remote repos
+  ```
+  git push origin branch_name
+  ```
 
 ### [Fifth]
-a. Go to Github 
+a. Go to [Github](https://github.com/).
 
-b. Create Pull Request
+b. Create Pull Request.
 
-c. Add description
+c. Add description.
 
-d. Add reviewer on right panel
+d. Add reviewer on right panel.
 
-e. Create pull request
+e. Create pull request.
 
-f. After create the PR, send the request to the group to get review
+f. After create the PR, send the request to the group to get review.
 
-g. As reviewer, check file changed, then add comment
+g. As reviewer, check file changed, then add comment.
