@@ -10,6 +10,22 @@ test('Sauce Demo Login | Click Button', async ({ page }) => {
     await page.close();
 });
 
+test('Login incorrect password', async ({ page }) => {
+    await page.goto('https://www.saucedemo.com/v1/');
+    await page.locator('[data-test="username"]').fill('standard_user');
+    await page.locator('[data-test="password"]').fill('123');
+    await page.getByRole('button', { name: 'LOGIN' }).click();
+    await expect(page.getByText('Username and password do not match')).toBeVisible();
+    await page.close();
+});
+
+test('Empty username and password', async ({ page }) => {
+    await page.goto('https://www.saucedemo.com/v1/');
+    await page.getByRole('button', { name: 'LOGIN' }).click();
+    await expect(page.getByText('Username is required')).toBeVisible();
+    await page.close();
+});
+
 test('Sauce Demo Login | Enter Button', async ({ page }) => {
     await page.goto('https://www.saucedemo.com/v1/');
     await page.locator('[data-test="username"]').fill('standard_user');
