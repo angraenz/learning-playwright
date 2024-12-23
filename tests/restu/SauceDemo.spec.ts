@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { login } from '../../utils/login';
+import { faker } from '@faker-js/faker';
 
 test('Sauce Demo Login | Click Button', async ({ page }) => {
     await page.goto('https://www.saucedemo.com/v1/');
@@ -118,5 +119,25 @@ test('New Tab', async ({ page, context }) => {
 
     // Clean up
     await newTab.close();
+    await page.close();
+});
+
+test('Checkout', async ({ page }) => {
+    const firstname = faker.person.firstName();
+    const lastname = faker.person.lastName();
+    const zipcode = faker.location.zipCode();
+
+    await login(page, 'standard_user', 'secret_sauce');
+    await page.locator('div').filter({ hasText: /^\$29\.99ADD TO CART$/ }).getByRole('button').click();
+    await page.getByRole('link', { name: '1' }).click();
+    await page.getByRole('link', { name: 'CHECKOUT' }).click();
+    await page.locator('[data-test="firstName"]').fill(firstname);
+    await page.locator('[data-test="lastName"]').fill(lastname);
+    await page.locator('[data-test="postalCode"]').fill(zipcode);
+    await page.locator('[data-test="postalCode"]').fill(zipcode);
+    await page.getByRole('button', { name: 'CONTINUE' }).click();
+    await expect(page.getByText('$29.99', { exact : true })).toBeVisible();
+    await page.getByRole('link', { name: 'FINISH' }).click();
+    await expect(page.getByRole('heading', { name : 'THANK YOU FOR YOUR ORDER' })).toBeVisible();
     await page.close();
 });
